@@ -1,45 +1,47 @@
 package Steps;
 
-import Pages.Login_Page;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class logIn {
+public class logIn extends Base {
 
-    static WebDriver driver;
-    static Login_Page Lp;
 
-    @BeforeTest
-    public void beforeTest() {
-
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        Lp = new Login_Page(driver);
-        driver.get("https://qtripdynamic-qa-frontend.vercel.app/");
-        driver.manage().window().maximize();
+    @Test
+    public void ClickLogin()
+    {
+        lg.info("User Click on login");
+        Lp.ClickOnLoginLink();
 
     }
 
     @Test
-    public void Test() throws InterruptedException {
-        Lp.ClickOnLoginLink();
-        Lp.VerifyTitleLogin("Login");
-        Lp.EnterLoginDetails("shuklasourabh50@gmail.com","Sourabh@1");
-        Thread.sleep(3000);
-        Lp.ClickOnLoginButton();
-
-    }
+        public void LoginPageTitle()
+        {
+            lg.info("User verify the Title of Login page");
+            Lp.VerifyTitleLogin("Login");
+        }
 
 
-    @AfterTest
-    public void afterTest()
-    {
-        driver.quit();
-    }
+        @Test
+       public void EnteringDetails() throws InterruptedException
+       {
+
+           lg.info("User enter valid email and password");
+
+           Lp.EnterLoginDetails("shuklasourabh50@gmail.com", "Sourabh@1");
+           Thread.sleep(3000);
+
+       }
+
+       @Test
+       public void ClickLoginButton()
+       {
+
+           lg.info("User click on login button ");
+           Lp.ClickOnLoginButton();
+
+       }
 
 
 }
+
+

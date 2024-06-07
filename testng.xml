@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/SOURABH SHUKLA/IdeaProjects/QTrip_QA_Project">
+    <test verbose="2" preserve-order="true" name="C:/Users/SOURABH SHUKLA/IdeaProjectsq/QTrip_QA_Project">
         <classes>
             <class name="Steps.Register">
                 <methods>
-                    <include name="Test"/>
+                    <include name="ClickRegister"/>
+                    <include name="RegisterPageTitle"/>
+                    <include name="EnterAllDetails"/>
+                    <include name="ClickRegisterButton"/>
                 </methods>
             </class>
             <class name="Steps.logIn">
                 <methods>
-                    <include name="Test"/>
+                    <include name="ClickLogin"/>
+                    <include name="LoginPageTitle"/>
+                    <include name="EnteringDetails"/>
+                    <include name="ClickLoginButton"/>
                 </methods>
             </class>
         </classes>
     </test>
 </suite>
-
